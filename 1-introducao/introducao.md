@@ -1,4 +1,4 @@
-# Conhecendo a linguagem Python
+# **Conhecendo a linguagem Python**
 Python é uma linguagem de programação de alto nível, amplamente utilizada em diversas áreas da tecnologia. Criada por Guido van Rossum e lançada em 1991, seu design prioriza a legibilidade do código, utilizando uma sintaxe clara e concisa que se assemelha muito à linguagem natural, facilitando o aprendizado e a manutenção.
 
 
@@ -15,15 +15,15 @@ A linguagem Python se tornou uma das mais famosas e preferidas por desenvolvedor
 
 
 
-## Primeiros passos para programar em Python
+## **Primeiros passos para programar em Python**
 Para iniciar sua jornada na programação Python, você precisará de duas coisas principais: a própria linguagem e um ambiente confortável para escrever e executar seu código.
 
-### Passo 1: instalação do python
+### **Passo 1: instalação do python**
 1. Acesse o Site Oficial: Vá para o site [python.org](https://www.python.org).
 2. Baixe a Versão Mais Recente: A versão mais atualizada para download geralmente é exibida em destaque no topo da página inicial (na seção "Downloads"). 
 3. Clique no botão para baixar o instalador compatível com seu sistema operacional (Windows, macOS ou Linux).
 
-### Passo 2: encontrando sua IDE
+### **Passo 2: encontrando sua IDE**
 Uma IDE (Integrated Development Environment - Ambiente de Desenvolvimento Integrado) é um programa onde você irá escrever, editar e gerenciar seu código de forma organizada.
 
 1. **Visual Studio Code (VS Code)**
@@ -54,13 +54,13 @@ Baixe o VS Code: Acesse o site [VS Code](https://code.visualstudio.com/download)
 4. **IDEs para smartphone**
 * Se você deseja praticar e codar usando apenas seu celular, existem duas ótimas opções de aplicativos:
 
-    #### Coding Python
+   #### **Coding Python**
 
     * **Encontre o App**: Vá até a "Play Store" (ou o gerenciador de apps do seu smartphone) e procure por "Coding Python".
     * **Identificação**: O ícone é uma tela de fundo preta com as letras "PY" no campo superior e a palavra "Coding" no campo inferior, ambas em branco.
     * Depois de baixar, abra o app. Você já pode começar a escrever seu código. Quando terminar, clique no botão "Run" para executar seu código.
 
-    #### Pydroid 3
+   #### **Pydroid 3**
 
     * **Encontre o App**: Busque por "Pydroid 3" na Play Store (ou em seu software gerenciador de apps).
     * **Identificação**: O ícone tem um fundo azul, com um detalhe em amarelo escrito "Py³" em fonte branca
