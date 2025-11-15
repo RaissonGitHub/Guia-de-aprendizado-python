@@ -75,8 +75,8 @@ print(7.8 in turmaB.values())
 
 **Exemplos de uso**:
 
+**`keys()`**
 ```py
-keys()
 print("Lista de Alunos:")
 for nome in turmaB.keys():
     print(nome)
@@ -89,8 +89,8 @@ for nome in turmaB.keys():
 # Mirela
 ```
 
+**`values()`**
 ```py
-values()
 # Calculando a média das notas
 notas = turmaB.values()
 media = sum(notas) / len(notas)
@@ -101,8 +101,8 @@ print(f"A média da turma é: {media:.2f}")
 # A média da turma é: 5.48
 ```
 
+**`items()`**
 ```py
-items()
 # Imprimindo a chave e o valor de forma formatada
 print("Notas Detalhadas:")
 for aluno, nota in turmaB.items():
