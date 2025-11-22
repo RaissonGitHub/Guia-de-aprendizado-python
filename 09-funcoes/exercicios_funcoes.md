@@ -33,7 +33,7 @@ Crie uma função `relatorio_final` que aceite um número variável de notas (us
 Defina uma variável global chamada `total_vendas` e inicialize-a com 0. Crie uma função chamada `registrar_venda` que aceite um `valor_venda`. Dentro desta função, utilize a palavra-chave `global` para acessar e modificar a variável `total_vendas`, adicionando o `valor_venda` a ela. Faça três chamadas para `registrar_venda(100)`, `registrar_venda(50)` e `registrar_venda(200)`. No final do script, imprima o valor final da variável global `total_vendas`.
 
 ## Exercício 7: 
-Você tem uma lista de nomes:` nomes = ["Ana", "Pedro", "Maria", "João", "Beatriz"]`. Use a função `sorted()` em conjunto com uma função `lambda` para ordenar essa lista pelo comprimento de cada nome (do menor para o maior), e não pela ordem alfabética. (Dica: use o argumento `key` da função `sorted()`). Imprima a lista ordenada.
+Você tem uma lista de nomes:` nomes = ["Ana", "Pedro", "Maria", "João", "Beatriz"]`. Use a função `sorted()` em conjunto com uma função `lambda` para ordenar essa lista pelo comprimento de cada nome (do menor para o maior), e não pela ordem alfabética. (Dica: use o argumento `key` da função `sorted()`. Imprima a lista ordenada.
 
 ## Exercício 8: 
 Crie uma função "fábrica" chamada `gerar_saudacao_personalizada` que aceite um prefixo (ex: "Bom dia"). Dentro dela, defina uma função interna chamada `saudar` que aceite um nome. A função `saudar` deve retornar a string `f"{prefixo}, {nome}!"`, utilizando o prefixo do escopo envolvente. A função externa (`gerar_saudacao_personalizada`) deve retornar a função interna `saudar`. 
