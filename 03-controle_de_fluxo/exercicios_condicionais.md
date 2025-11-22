@@ -10,7 +10,7 @@ Um explorador encontra um baú com três chaves: uma de ouro, uma de prata e uma
 
 **Entrada:** um conjunto de caracteres
 
-**Saída**: `"Tesouro encontrado!"`, `"Tente novamente"` ou `“have inválida”`
+**Saída**: `"Tesouro encontrado!"`, `"Tente novamente"` ou `“Chave inválida”`
 
 ## Exercício 3
 Um piloto decide se decola baseado no clima. Escreva um programa que receba o status do tempo ("ensolarado", "nublado", "chuvoso") e mostre a mensagem de acordo com: `"Decolagem autorizada"` se `"ensolarado"`, `"Aguardar"` se `"nublado"`, `"Cancelado"` se `"chuvoso"`, ou `“Status não identificado”` se for um valor fora do esperado.
