@@ -24,13 +24,9 @@ Crie um módulo `mensagem.py` que contenha duas funções:
 
  Implemente um módulo `geometria.py` com funções para calcular:
  
-área do círculo,
-
-
-área do quadrado,
-
-
-área do triângulo.
+- área do círculo,
+- área do quadrado,
+- área do triângulo.
 
 
 No `app.py`, importe o módulo e permita ao usuário escolher qual cálculo deseja realizar.
