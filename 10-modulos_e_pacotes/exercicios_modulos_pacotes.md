@@ -34,10 +34,10 @@ No `app.py`, importe o módulo e permita ao usuário escolher qual cálculo dese
 ## Exercício 5:
 
  Crie um pacote chamado biblioteca contendo dois módulos:
-`livros.py`: lista de livros e função adicionar_livro()
+ 
+`livros.py`: lista de livros e função `adicionar_livro()`
 
-
-`usuarios.py`: lista de usuários e função registrar_usuario()
+`usuarios.py`: lista de usuários e função `registrar_usuario()`
 
 
 No `main.py`, importe os dois módulos e simule o cadastro de usuários e livros com dicionários.
