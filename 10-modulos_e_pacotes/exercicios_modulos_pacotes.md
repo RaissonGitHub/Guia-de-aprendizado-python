@@ -44,15 +44,15 @@ No `main.py`, importe os dois módulos e simule o cadastro de usuários e livros
 ## Exercício 6:
 
  Crie um módulo `temperatura.py` com duas funções:
-celsius_para_fahrenheit(c)
-
-
-fahrenheit_para_celsius(f)
+ 
+- `celsius_para_fahrenheit(c)`
+- `fahrenheit_para_celsius(f)`
 
  Depois, crie um programa que peça ao usuário a temperatura e o tipo de conversão e exiba o resultado formatado.
 
 
 ## Exercício 7:
 
- Crie um módulo `conversor.py` com uma função binario_para_decimal(num_bin) que converta um número binário (string) em decimal (inteiro).
+ Crie um módulo `conversor.py` com uma função `binario_para_decimal(num_bin)` que converta um número binário (string) em decimal (inteiro).
+ 
  Teste no `main.py` pedindo o número binário ao usuário.
