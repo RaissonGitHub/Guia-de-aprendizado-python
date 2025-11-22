@@ -4,137 +4,81 @@ Para entender os sets, imagine um conjunto de figurinhas repetidas: você guarda
 
 ## O que são conjuntos?
 
-Conjuntos são coleções não ordenadas, mutáveis e que não permitem valores duplicados. Eles são ideais quando a unicidade dos elementos importa.
+Sets são coleções **não ordenadas**, **mutáveis** e que não** permitem valores duplicados**.
+
+Isso os torna ideais para situações onde a unicidade dos elementos importa.
 
 ## Como criar um conjunto
-
+**Exemplo:**
 ```py
 meu_set = {1, 2, 2, 3}
 print(meu_set)  # {1, 2, 3}
 ```
 
-## Métodos principais dos conjuntos
+## Adicionando itens a um conjunto
 
-Conjuntos funcionam como um grupo de figurinhas sem repetição: duplicatas desaparecem e a ordem não importa.
+Sets funcionam como um grupo de figurinhas sem repetição: não importa a ordem, e duplicatas não existem.
 
 ### add(item)
 
 Adiciona um novo item ao conjunto.
 
+**Exemplo:**
 ```py
 s = {1, 2}
 s.add(5)
 ```
+## Removendo elementos de um conjunto (set)
+Assim como acontecia com listas, também é possível remover elementos de um conjunto.
 
-Use quando desejar inserir elementos únicos.
+Porém, **é muito importante lembrar que sets não possuem índices**, então você sempre remove itens pelo valor, nunca pela posição.
+
+A seguir estão os principais métodos de remoção e quando usá-los:
 
 ### remove(item)
+Remove um item específico do conjunto.
+* Se o item não existir, ocorre um erro (KeyError).
+* Use quando você tem certeza de que o item está no conjunto.
 
-Remove um item específico e gera um erro (`KeyError`) se ele não existir.
-
+**Exemplo:**
 ```py
-s = {1, 2, 3}
-s.remove(2)
+frutas = {"maçã", "banana", "uva"}
+frutas.remove("banana")
+print(frutas)  
+# {'maçã', 'uva'}
 ```
-
-Use quando tiver certeza de que o item está presente.
 
 ### discard(item)
-
-Remove o item, mas não gera erro se ele não existir.
-
+Também remove um item específico, mas **NÃO gera erro se o item não existir**.
+* Sempre seguro de usar.
+* Mais recomendado quando não temos certeza da presença do elemento.
+  
+**Exemplo:**
 ```py
-s = {1, 2, 3}
-s.discard(4)  # Seguro mesmo se o elemento não existir
+frutas = {"maçã", "banana", "uva"}
+frutas.discard("laranja")  # não existe, mas não gera erro
+print(frutas)  
 ```
-
 ### pop()
-
-Remove e retorna um item aleatório (como sets não têm ordem, você não controla qual sai).
-
+Remove e retorna **um elemento aleatório** do `set`.
+* Lembre que `sets` não são ordenados.
+* Útil quando você só quer "pegar e remover qualquer elemento".
+  
+**Exemplo:**
 ```py
-s = {10, 20, 30}
-removido = s.pop()
+numeros = {10, 20, 30}
+removido = numeros.pop()
+print("Removi:", removido)
+print(numeros) 
 ```
-
 ### clear()
+Remove **todos os elementos**, deixando o set vazio.
 
-Remove todos os elementos do conjunto.
-
+**Exemplo:**
 ```py
 s = {1, 2, 3}
 s.clear()
 print(s)  # set()
-```
-
-### union(outro_set)
-
-Retorna um novo conjunto com todos os elementos presentes em qualquer um dos conjuntos.
-
-```py
-A = {1, 2}
-B = {2, 3}
-print(A.union(B))  # {1, 2, 3}
-```
-
-### intersection(outro_set)
-
-Retorna apenas os elementos em comum.
-
-```py
-A = {1, 2, 3}
-B = {2, 3, 4}
-print(A.intersection(B))  # {2, 3}
-```
-
-### difference(outro_set)
-
-Retorna os itens que estão em um conjunto e não estão no outro.
-
-```py
-A = {1, 2, 3}
-B = {2, 4}
-print(A.difference(B))  # {1, 3}
-```
-
-### symmetric_difference(outro_set)
-
-Retorna os elementos exclusivos de cada conjunto (fora da interseção).
-
-```py
-A = {1, 2, 3}
-B = {3, 4}
-print(A.symmetric_difference(B))  # {1, 2, 4}
-```
-
-### issubset(outro_set)
-
-Verifica se todos os elementos de um conjunto estão em outro.
-
-```py
-A = {1, 2}
-B = {1, 2, 3}
-print(A.issubset(B))  # True
-```
-
-### issuperset(outro_set)
-
-Verifica se um conjunto contém todos os elementos de outro.
-
-```py
-A = {1, 2, 3}
-B = {1, 2}
-print(A.issuperset(B))  # True
-```
-
-### isdisjoint(outro_set)
-
-Verifica se dois conjuntos não possuem elementos em comum.
-
-```py
-A = {1, 2, 3}
-B = {4, 5}
-print(A.isdisjoint(B))  # True
 ```
 
 ## Exemplo: removendo duplicatas e ordenando nomes
@@ -161,73 +105,12 @@ print(nomes_unicos)
 - `set()` elimina duplicatas.
 - `sort()` coloca em ordem alfabética.
 
-## Diferença entre conjuntos
-
-A operação de diferença responde à pergunta: quais elementos estão em um conjunto, mas não no outro? Imagine dois grupos de alunos: um participou da aula de Python e outro da aula de Java. A diferença revela quem participou apenas da aula de Python.
-
-```py
-a = {1, 2, 3, 4}
-b = {3, 4, 5}
-
-resultado = a.difference(b)
-print(resultado)  # {1, 2}
-
-resultado = a - b
-print(resultado)  # {1, 2}
-```
-
-## Diferença simétrica
-
-A diferença simétrica retorna todos os elementos que estão em um conjunto ou no outro, mas não nos dois. É útil para descobrir quem participou apenas de uma das aulas.
-
-```py
-a = {1, 2, 3}
-b = {3, 4, 5}
-
-resultado = a.symmetric_difference(b)
-print(resultado)  # {1, 2, 4, 5}
-
-resultado = a ^ b
-print(resultado)  # {1, 2, 4, 5}
-```
-
-## Testando subconjuntos
-
-Um conjunto é subconjunto de outro quando todos os seus elementos também estão presentes no outro conjunto. Pense em um álbum de figurinhas: se você tem as figurinhas `{1, 2}` e o álbum completo possui `{1, 2, 3, 4}`, o seu conjunto é subconjunto do álbum.
-
-```py
-aluno_basico = {1, 2}
-aluno_avancado = {1, 2, 3, 4}
-
-print(aluno_basico.issubset(aluno_avancado))  # True
-```
-
-## Testando superconjuntos
-
-O oposto também vale: um conjunto é superconjunto quando contém todos os elementos de outro.
-
-```py
-aluno_avancado = {1, 2, 3, 4}
-aluno_basico = {1, 2}
-
-print(aluno_avancado.issuperset(aluno_basico))  # True
-```
-
-## Conjuntos disjuntos
-
-Dois conjuntos são disjuntos quando não possuem nenhum elemento em comum. Imagine duas sacolas de brinquedos sem nenhum item repetido.
-
-```py
-brinquedos1 = {"bola", "carrinho"}
-brinquedos2 = {"boneca", "quebra-cabeca"}
-
-print(brinquedos1.isdisjoint(brinquedos2))  # True
-```
 
 ## Convertendo outros tipos para conjuntos
 
 Conjuntos podem ser criados a partir de listas, tuplas e até strings, o que é muito útil para remover elementos duplicados.
 
+**Exemplo:**
 ```py
 lista = [1, 2, 2, 3, 3, 3]
 unico = set(lista)
@@ -238,6 +121,7 @@ print(unico)  # {1, 2, 3}
 
 Assim como listas e tuplas, podemos percorrer um conjunto com `for`. Lembre-se de que a ordem pode mudar a cada execução.
 
+**Exemplo:**
 ```py
 frutas = {"maca", "banana", "uva"}
 
@@ -245,74 +129,110 @@ for fruta in frutas:
     print(fruta)
 ```
 
-## Removendo elementos de um conjunto
-
-Sets não possuem índices, então removemos itens pelo valor.
-
-```python
-frutas = {"maca", "banana", "uva"}
-frutas.remove("banana")
-print(frutas)  # {'maca', 'uva'}
-
-frutas.discard("laranja")  # Seguro se o item não existir
-print(frutas)
-
-numeros = {10, 20, 30}
-removido = numeros.pop()
-print("Removi:", removido)
-print(numeros)
-```
-
 ## Operações matemáticas com conjuntos
 
-Conjuntos foram inspirados na matemática, então podemos realizar união, interseção, diferença e diferença simétrica. Pense em duas caixas com objetos únicos.
+Os conjuntos foram inspirados em conjuntos da matemática. Assim, é possível realizar operações como:
+* União
+* Interseção
+* Diferença
+* Diferença simétrica
+Vamos explicar cada uma com bastante calma e analogias.
 
-```python
-a = {1, 2, 3}
-b = {3, 4, 5}
-
-# União
-print(a | b)                 # {1, 2, 3, 4, 5}
-print(a.union(b))            # {1, 2, 3, 4, 5}
-
-# Interseção
-print(a & b)                 # {3}
-print(a.intersection(b))     # {3}
-
-# Diferença
-print(a - b)                 # {1, 2}
-print(a.difference(b))       # {1, 2}
-
-# Diferença simétrica
-print(a ^ b)                 # {1, 2, 4, 5}
-print(a.symmetric_difference(b))  # {1, 2, 4, 5}
-```
-
-## Métodos de comparação
+Imagine conjuntos como **duas caixas com objetos dentro**, onde cada objeto só pode aparecer uma vez em cada caixa.
 
 Use estes métodos para entender como dois conjuntos se relacionam.
 
-```python
+### União — set1 | set2 ou set1.union(set2)
+
+Pense assim: é como juntar os objetos de duas caixas, **sem repetir itens**.
+
+**Exemplo:**
+```py
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a | b)  # {1, 2, 3, 4, 5}
+```
+### Interseção — set1 & set2 ou set1.intersection(set2)
+É o que existe **nas duas caixas ao mesmo tempo**.
+```py
+a = {1, 2, 3}
+b = {2, 3, 4}
+print(a & b)  # {2, 3}
+```
+### Diferença — set1 - set2 ou set1.difference(set2)
+Imagine retirar da primeira caixa todos os itens que também estão na segunda.
+
+**Exemplo:**
+```py
+a = {1, 2, 3}
+b = {3, 4}
+print(a - b)  # {1, 2}
+```
+
+### Diferença simétrica — set1 ^ set2 ou set1.symmetric_difference(set2)
+É como pegar tudo o que existe em **apenas uma das caixas**, excluindo o que é comum.
+
+**Exemplo:**
+```py
+a = {1, 2, 3}
+b = {3, 4}
+print(a ^ b)  # {1, 2, 4}
+```
+## Métodos de comparação entre conjuntos
+Estes métodos servem para saber como dois conjuntos se relacionam.
+Pense em **uma caixa menor dentro de outra**, ou **duas caixas sem nada em comum**.
+
+### isdisjoint() — verifica se os conjuntos NÃO têm elementos em comum
+
+Imagine duas caixas completamente diferentes.
+Se nada se repete, retorna `True`.
+
+**Exemplo:**
+```py
 a = {1, 2, 3}
 b = {4, 5}
 print(a.isdisjoint(b))  # True
+```
 
+### issubset() — verifica se um conjunto está contido em outro
+
+É como perguntar:
+**“Todos os itens da caixa A cabem dentro da caixa B?”**
+
+**Exemplo:**
+```py
 a = {1, 2}
 b = {1, 2, 3, 4}
-print(a.issubset(b))    # True
+print(a.issubset(b))  # True
+```
 
+### issuperset() — verifica se o conjunto é maior e contém outro dentro dele
+
+É o contrário de `issubset()`.
+**“A caixa B contém todos os itens da caixa A?”**
+
+**Exemplo:**
+```py
+b = {1, 2, 3, 4}
+a = {1, 2}
 print(b.issuperset(a))  # True
 ```
 
 ## Operadores `in` e `not in`
 
-Conjuntos são a estrutura mais rápida do Python para verificar presença de elementos.
+Os `sets` são a estrutura mais rápida do Python para verificar se algo está presente.
+* `in` → verifica se algo existe
+* `not in` → verifica se algo não existe
 
+**Exemplo:**
 ```python
 nomes = {"Ana", "Lucas", "Joao"}
-
 print("Ana" in nomes)        # True
 print("Carlos" not in nomes) # True
 ```
 
-Use sets para verificar valores rapidamente, evitar duplicatas e comparar grupos de informações.
+Por isso, sets são muito usados para:
+- verificar presença de valores rapidamente
+- evitar duplicatas
+- comparar grupos de informações
+
