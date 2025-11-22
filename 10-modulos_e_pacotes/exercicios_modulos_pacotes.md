@@ -23,6 +23,7 @@ Crie um módulo `mensagem.py` que contenha duas funções:
 ## Exercício 4:
 
  Implemente um módulo `geometria.py` com funções para calcular:
+ 
 área do círculo,
 
 
