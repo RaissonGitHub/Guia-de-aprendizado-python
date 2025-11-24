@@ -24,7 +24,7 @@ O objetivo principal é fornecer um material autoexplicativo que permita ao estu
 1. Clone o repositório:
 
 ```sh
-git clone <URL-do-repositorio>
+git clone https://github.com/RaissonGitHub/Guia-de-aprendizado-python.git
 ```
 
 2. Navegue até a pasta do curso e abra os arquivos Markdown com seu editor favorito ou visualize-os no GitHub.
